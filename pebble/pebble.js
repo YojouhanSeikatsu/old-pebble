@@ -112,7 +112,7 @@ function refreshChat(user_data, change_channel = false, first = false) {
     globalMessages.forEach(function(data, index) {
         if ((data.val().whisper == null || data.val().whisper == getUsername() || data.val().name == getUsername() || obj.admin > 0) && (data.val().channel == (sessionStorage.getItem("channel") || "general") || (data.val().name == "[SERVER]" && sessionStorage.getItem("channel") !== "extra"))) {
             if (everyoneRevealed) {
-                var username = data.val().real_name || "[SERVER]";
+                // var username = data.val().real_name || "[SERVER]";
             } else {
                 var username = data.val().name;
             }
@@ -152,13 +152,13 @@ function refreshChat(user_data, change_channel = false, first = false) {
             } else if (prevItem == null || prevItem.val().name != data.val().name || prevItem.val().channel != data.val().channel || data.val().edited) {
                 var userElement = document.createElement("div");
                 userElement.setAttribute("class", "username");
-                userElement.addEventListener("click", function(e) {
-                    if (userElement.innerHTML.includes("@")) {
-                        userElement.innerHTML = username;
-                    } else {
-                        userElement.innerHTML = username + " @(" + data.val().real_name + ")";
-                    }
-                })
+                // userElement.addEventListener("click", function(e) {
+                //     if (userElement.innerHTML.includes("@")) {
+                //         userElement.innerHTML = username;
+                //     } else {
+                //         userElement.innerHTML = username + " @(" + data.val().real_name + ")";
+                //     }
+                // })
                 userElement.innerHTML = username;
                 if (data.val().edited) {
                     userElement.innerHTML += " <span style='color: gray; font-size: 60%'>(Edited)</span>";
