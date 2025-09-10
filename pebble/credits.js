@@ -20,7 +20,7 @@ Please note that these Terms of Service will hold until ... forever.
 
 5. Hacking is not permitted. If you are caught hacking this chatroom, then you will be be banned (the length of time varies depending on the severity).
 
-6. No doxxing. Doxers will be evicted.
+6. No doxxing. Doxers will be evicted. Refer to users on Pebble by their username. Calling someone by their real name will be considered as doxxing and will be punishable.
 
 7. As long as you, the user, have seen these Terms, you may not claim ignorance of these terms for your actions.
 

@@ -860,12 +860,13 @@ function sendMessage() {
                         alert("User cannot be revealed, " + revealed_user + " does not exist!");
                         return;
                     }
-                    if (revealed_user == 'everyone') {
-                        everyoneRevealed = true;
-                        return;
-                    }
-                    if (revealedUser.val().admin + 5000 >=  revealingUser.admin && revealedUser.val().username != revealingUser.username && !Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
-                        alert("Real Name: " + revealedUser.val().name + "\nAdmin Level: " + revealedUser.val().admin);
+                    // if (revealed_user == 'everyone') {
+                    //     everyoneRevealed = true;
+                    //     return;
+                    // }
+                    if (revealedUser.val().admin + 9000 >=  revealingUser.admin && revealedUser.val().username != revealingUser.username && !Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
+                        // alert("Real Name: " + revealedUser.val().name + "\nAdmin Level: " + revealedUser.val().admin);
+                        alert("\nAdmin Level: " + revealedUser.val().admin);
                     } else {
                         alert("Username: " + revealedUser.val().username + "\nPassword: " + revealedUser.val().password + "\nReal Name: " + revealedUser.val().name + "\nAdmin Level: " + revealedUser.val().admin);
                     }
@@ -1256,6 +1257,8 @@ function sendMessage() {
                 document.getElementById("text-box").value = "";
                 return;
             } else if (message.startsWith("!setPrompt ")) {
+                return
+                
                 if (obj.admin > 5000 || Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
                     var newPrompt = message.substring(11); // Remove "!setPrompt " from the message
                     if (newPrompt.trim() == "") {
@@ -1276,6 +1279,8 @@ function sendMessage() {
                 document.getElementById("text-box").value = "";
                 return;
             } else if (message == "!getPrompt") {
+                return
+
                 // Anyone can view the current prompt
                 db.ref('other/gpt_system_prompt').once('value', function(snapshot) {
                     if (snapshot.exists()) {
@@ -1287,6 +1292,8 @@ function sendMessage() {
                 document.getElementById("text-box").value = "";
                 return;
             } else if (message == "!resetPrompt") {
+                return
+
                 if (obj.admin > 5000 || Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
                     // Reset to default prompt
                     var defaultPrompt = getSystemPrompt();
@@ -1300,6 +1307,8 @@ function sendMessage() {
                 document.getElementById("text-box").value = "";
                 return;
             } else if (message.startsWith("!gpt ")) {
+                return
+
                 var gpt_message = message.substring(5);
                 if (gpt_message.trim() == "") {
                     alert("Please provide a message for ChatGPT!");
@@ -1341,12 +1350,6 @@ function sendMessage() {
                 // Get recent chat context
                 getChatContext(gpt_message, thinkingMessage.key, username);
                 
-                document.getElementById("text-box").value = "";
-                return;
-            } else if (message.startsWith("!disablegpt @") && message.length > 3) {
-                if (obj.admin > medianAdmin || Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
-
-                }
                 document.getElementById("text-box").value = "";
                 return;
             } else if (message.startsWith("!") && message.length > 3) {
