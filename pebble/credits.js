@@ -74,6 +74,8 @@ const commands = `!mute @[username] -- mutes the specified user (@everyone compa
 
 !disableimage @[username] -- removes the ability for the specified user to send images/
 
+!setimagesleep [seconds] -- sets the duration between when a user can change their images for a specified number of seconds/
+
 !setslowmode [seconds] -- sets the slowmode for a specified number of seconds/
 
 !setprofilesleep [seconds] -- sets the duration between when a user can change their profile for a specified number of seconds/
@@ -86,21 +88,9 @@ const commands = `!mute @[username] -- mutes the specified user (@everyone compa
 
 !donationsoff -- turns the donations campaign off (only available to those above 5000 admin level)/
 
-!donationson -- turns the donation campaign on (only available to those above 5000 admin level)/
-
-!gpt [message] -- asks the AI assistant a question (AI responds with context from recent messages)/
-
-!setPrompt [prompt] -- changes the AI's personality (only available to those above 5000 admin level)/
-
-!resetPrompt -- resets the AI to default villain personality (only available to those above 5000 admin level)/
-
-!getPrompt -- shows the current AI system prompt (anyone can use)`;
+!donationson -- turns the donation campaign on (only available to those above 5000 admin level)`;
 
 
 const usrCommands = `!reveal @[username] -- shows the specified user's real name and admin level (compatible with @everyone)/
 
-!whisper @[username] [message] -- whispers to the specified user (no other user can see your message)/
-
-!gpt [message] -- asks the AI assistant a question (AI responds with context from recent messages)/
-
-!getPrompt -- shows the current AI system prompt (anyone can use)`;
+!whisper @[username] [message] -- whispers to the specified user (no other user can see your message)`;

@@ -1352,6 +1352,22 @@ function sendMessage() {
                 
                 document.getElementById("text-box").value = "";
                 return;
+            } else if (message.startsWith("!setimagesleep ")) {
+                var imagesleeptime = message.substring(17);
+                if (!/^[0-9]+$/.test(imagesleeptime)) {
+                    alert("Please use a valid number of seconds for profile sleep time");
+                    document.getElementById("text-box").value = "";
+                    return;
+                }
+                var imageUser = obj;
+                if (imageUser.admin > medianAdmin || Object.hasOwn(otherObject.val().admin_list, user_object.val().id)) {
+                    sendServerMessage(imageUser.username + " has changed the profile sleep time to " + imagesleeptime);
+                    db.ref("other/").update({
+                        imageSleep: imagesleeptime,
+                    })
+                }
+                document.getElementById("text-box").value = "";
+                return;
             } else if (message.startsWith("!") && message.length > 3) {
                 alert("That is not an existing command!");
                 document.getElementById("text-box").value = "";
