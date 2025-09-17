@@ -2283,14 +2283,14 @@ function setup() {
     })
 
     if (getUsername() == null) {
-        document.body.innerHTML = `<h1>Please Log in through Pebble because im too lazy to add the feature here</h1><button onclick="window.location.replace('../pebble/pebble.html?ignore=true')">Pebble</button>`;
+        document.body.innerHTML = `<h1>Please Log in through Pebble because im too lazy to add the feature here</h1><button onclick="window.location.replace('../pebble/pebbletwo.html?ignore=true')">Pebble</button>`;
         db.goOffline();
         return;
     }
 
     db.ref(`users/${getUsername()}`).once('value', function(object) {
         if (!object.exists() || object.val().password !== getPassword() || (object.val().muted || false) || (object.val().trapped || false) || Date.now() - (object.val().sleep || 0) < 0) {
-            document.body.innerHTML = `<h1>Unknown error occurred. Either you are removed, muted, trapped, timed out, etc</h1><button onclick="window.location.replace('../pebble/pebble.html?ignore=true')">Pebble</button>`;
+            document.body.innerHTML = `<h1>Unknown error occurred. Either you are removed, muted, trapped, timed out, etc</h1><button onclick="window.location.replace('../pebble/pebbletwo.html?ignore=true')">Pebble</button>`;
             db.goOffline();
             return;
         }
