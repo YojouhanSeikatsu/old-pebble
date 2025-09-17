@@ -10,6 +10,7 @@
 
         <script src="../universal.js"></script>
         <link rel="stylesheet" href="../universal.css">
+        <script src="../config.js"></script>
 
         <link rel="stylesheet" href="rock.css">
         <script src="rock.js"></script>
@@ -39,11 +40,30 @@
             </button>
         </div>
 
-        <div id="search">
+        <div id="toolbar">
             <input type="text" id="search-field"><button type="button" id="search-button">Search</button>
+            <button type="button" id="post-button" onclick="newPost()">New Post</button>
+            <br>
+            Sort by: 
+            <select id="sortby">
+                <option value="last-comment" selected>Last comment</option>
+                <option value="newest">Newest post</option>
+                <option value="oldest">Oldest post</option>
+                <option value="most-comment">Comment number</option>
+            </select>
+            Filter by: 
+            <select id="filterby">
+                <option value="none" selected>None</option>
+            </select>
         </div>
 
         <div id="main">
+            <div class="topic">
+                <div class="title">Testing new rock forum</div>
+                <hr>
+                <div class="body">This will perhaps never get finished</div>
+            </div>
+
             <div class="topic">
                 <div class="title">Testing new rock forum</div>
                 <hr>
