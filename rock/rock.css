@@ -68,6 +68,7 @@ button:active {
     width: 90%;
     border: solid;
     margin-bottom: 2%;
+    overflow: hidden;
 }
 
 .title {
@@ -80,4 +81,12 @@ button:active {
     font-size: 80%;
     padding-left: 2%;
     padding-bottom: 2%;
+}
+
+#post-title {
+    width: 100%;
+}
+
+#post-body {
+    width: 100%;
 }
